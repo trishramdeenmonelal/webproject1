@@ -1,0 +1,17 @@
+{% extends "base.html" %} 
+{% block main %}  
+{% if user %} 
+<img src= "{{url_for('static', filename= 'uploads/' + user.profilepic )}}">
+<h5>{{ user.firstname }} {{ user.lastname }}</h5>
+<p>{{ user.gender }}</p>
+<p>{{ user.location }}</p>  
+    
+<h5>About Me</h5> 
+<p>{{ user.biography }}</p><br>
+    
+<button class="btn btn-primary">Follow</button> 
+   
+<button class="btn btn-primary">Send Message</button> 
+
+{% endif %}
+{% endblock %}

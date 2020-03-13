@@ -1,0 +1,22 @@
+  
+{% extends "base.html" %}
+
+{% block main %} 
+  <h2>All wow profiles</h2>
+
+{% if users %} 
+{% for user in users %}
+<div class="border border-primary">  
+
+<img src= "{{url_for('static', filename= 'uploads/' + user.profilepic )}}">
+<h4>{{ user.firstname }} {{ user.lastname }}</h4>
+<p>{{ user.gender }}</p>
+<p>{{ user.location }}</p>
+<button class="btn btn-primary" onclick="location.href='{{ url_for('fullprofile', userid=user.id) }}'" >View Profile</button> 
+
+         
+</div>
+           
+{% endfor %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,14 @@
+Click==7.0
+Flask==1.1.1
+gunicorn==19.9.0
+itsdangerous==1.1.0
+Jinja2==2.11.1
+MarkupSafe==1.1.0
+Werkzeug==1.0.0
+Flask-WTF
+Flask-Mail
+Flask-SQLAlchemy
+Flask-Migrate
+Flask-Script
+Flask_Login
+psycopg2
