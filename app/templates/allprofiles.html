@@ -6,7 +6,7 @@
 
 {% if users %} 
 {% for user in users %}
- <div class="profile-card">
+<div class="profile-card">
                 <div class="profile-info">
                     <img src="{{ url_for('static', filename='uploads/'+user.profilepic) }}"></img>
                     <div class="info">
@@ -21,14 +21,15 @@
                         </div>
                     </div>
                 </div>
+				
 	<div class="col"> 
             <div clas="justify-content-center" >
                 <button class="btn btn-primary" onclick="location.href='{{ url_for('fullprofile', userid=user.id) }}'" >View Profile</button> 
 
             </div>
         </div> 
-
-</div
+				
+</div>
 {% endfor %}
 {% endif %}
 {% endblock %}
