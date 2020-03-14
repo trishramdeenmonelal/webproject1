@@ -1,17 +1,36 @@
 {% extends "base.html" %} 
 {% block main %}  
 {% if user %} 
-<img src= "{{url_for('static', filename= 'uploads/' + user.profilepic )}}">
-<h5>{{ user.firstname }} {{ user.lastname }}</h5>
-<p>{{ user.gender }}</p>
-<p>{{ user.location }}</p>  
+ <div class="card">
+        <img class="profile-pic"src="{{ url_for('static', filename='uploads/'+user.profilepic) }}"></img>
+<div class="bio">
+            <h2>{{ user.firstname }} {{ user.lastname }}</h2>
+            <div class="profile-stats">
+                <i class="far fa-envelope"></i>
+                {{ user.email }}
+            </div>
+            <div class="profile-stats">
+                <i class="fas fa-map-marker-alt"></i>
+                {{ user.location }}
+            </div>
+            <div class="profile-stats">
+                <i class="far fa-calendar-alt"></i>
+                Joined on {{startdate}}
+            </div>
+        </div>
+        
+        <div class="card-body">
+            <h3>About Me</h3>
+            <p>{{ user.biography }}</p>
+        </div>
+		
+		<button class="btn btn-primary">Follow</button> 
+	
+		<button class="btn btn-success">Send Message</button> 
+</div>
+       
     
-<h5>About Me</h5> 
-<p>{{ user.biography }}</p><br>
-    
-<button class="btn btn-primary">Follow</button> 
-   
-<button class="btn btn-primary">Send Message</button> 
+
 
 {% endif %}
 {% endblock %}

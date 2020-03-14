@@ -12,6 +12,8 @@ from app.models import UserProfile
 from werkzeug.utils import secure_filename
 import psycopg2    
 import os    
+from datetime import datetime
+
 
 ###
 # Routing for your application.
@@ -32,7 +34,7 @@ def about():
 def fullprofile(userid):
     """Render the website's about page."""
     user=UserProfile.query.get(userid)
-    return render_template('fullprofile.html', user=user)
+    return render_template('fullprofile.html', user=user, startdate=format_date_joined(12, 2, 2018))
 
 @app.route('/allprofiles/')
 def Users(): 
@@ -104,6 +106,9 @@ def page_not_found(error):
     """Custom 404 page."""
     return render_template('404.html'), 404
 
-
+def format_date_joined(month,day, year):
+    x = datetime(year,month,day) 
+    return(x.strftime("%B" + " " +"%d"+ "  "+"%Y"))
+    
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port="8080")

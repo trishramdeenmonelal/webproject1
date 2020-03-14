@@ -1,3 +1,77 @@
 body {
     padding-top: 5rem;
 }
+.profile-card {
+    border-top: 3px solid var(--primary);
+    box-sizing: border-box;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 40px;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: var(--b-radius);
+    box-shadow: 1px 2px 5px 2px rgba(186,186,186,1);;
+}
+
+.profile-card img {
+    width: 80px;
+    height: 80px;
+    margin-right: 50px;
+}
+
+.card {
+    width: 80%;
+    margin: 0 auto;
+    padding:40px 50px 15px 50px;
+    border-top: 3px solid var(--primary);
+    border-radius: var(--b-radius);
+    display: grid;
+    grid-template-areas: "pic info"
+                         "about about"
+                         "buttons buttons";
+    grid-template-columns: repeat(2,1fr);           
+}
+
+.profile-pic {
+    grid-area: pic;
+    height: 200px;
+    width: 200px;
+    border-radius: var(--b-radius);
+}
+
+.bio {
+    grid-area: info;
+}
+
+.card-body {
+    grid-area: about;
+    padding-left: none;
+}
+
+.card-btns {
+    grid-area: buttons;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.profile-card i {
+    margin-right: 5px;
+}
+
+.profile-stats {
+    line-height: 16px;
+    margin-bottom: 4px;
+}
+
+.profile-info {
+    display: flex;
+}
+
+.bio > div {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: gray;
+}
+
